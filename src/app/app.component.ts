@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AutosService } from './services/autos.service';
 
 @Component({
+  standalone: true,
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
