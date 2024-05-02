@@ -2,12 +2,11 @@ import { Component } from '@angular/core';
 import { ImagesService } from '../../services/images.service';
 import { Bike } from '../../models/bike';
 
+
 @Component({
   selector: 'app-image-gallery',
-  standalone: true,
-  imports: [],
   templateUrl: './image-gallery.component.html',
-  styleUrl: './image-gallery.component.css'
+  styleUrls: ['./image-gallery.component.css']
 })
 export class ImageGalleryComponent {
 
@@ -24,13 +23,12 @@ export class ImageGalleryComponent {
   console.log("Buscamos la imagen de id 6 "); // traer / buscamos imagen por id, en este caso 6.
   console.dir(imageService.getImageById(6)); // 6 podria venir por el imput de un formulario.
 }
+filterby (brandd: string){this.allImages = this.allImages.filter(image => image.brand == brandd);
+  console.log(this.allImages);
+}
+}
 
-//  filterBy(brand :string ) {
-//    this.allImages = this.allImages.filter(image => image.brand == brand);
-//    console.log(this.allImages);
-//  }
-
-  }
+  
 
 
 

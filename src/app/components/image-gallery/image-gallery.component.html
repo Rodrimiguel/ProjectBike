@@ -1,1 +1,44 @@
-<p>image-gallery works!</p>
+<div>
+
+    <div class="row">
+        <div class="col-sm-12 btn btn-primary">
+            Image Gallery
+        </div>
+    </div>
+
+    <div class="row" style="margin-top: 15px; margin-bottom: 15px;">
+        <div class="col-sm-1">
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-success" (click)="filterBy='all'">Todos los modelos</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-success" (click)="filterBy='nenesrc'">Para niños</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-success" (click)="filterBy='bkeco'">Economicas</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-success" (click)="filterBy='bkmotor'">Con Motor</button>
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-success" (click)="filterBy='adultosrc'">Para Adultos</button>
+        </div>
+        <div class="col-sm-1">
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="biciContainer" *ngFor="let image of (allImages | filterimages : filterBy)">
+                <h2>Bicicleta id: {{ image.id }}</h2>
+                <h3>precio $: {{ image.precio }}</h3>
+                <img src="{{ image.url }}" alt="{{ image.brand }}">
+            </div>
+        </div>
+    </div>
+</div>
+
+
